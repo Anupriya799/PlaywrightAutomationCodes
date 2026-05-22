@@ -1,0 +1,20 @@
+name: Playwright Java Tests
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get code from GitHub
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+
+    - name: Build and Run Playwright Tests
+      run: mvn test
