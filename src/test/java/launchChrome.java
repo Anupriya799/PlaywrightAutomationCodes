@@ -68,9 +68,68 @@ public class launchChrome {
 		page.getByPlaceholder("Enter Email").fill("test@gmail.com");
 		page.locator("input[placeholder='Enter Email']").fill("test@gmail.com");
 		
+		//After run the program to close browser
+		page.close();
+		browser.close();
+		playwright.close();
 		
+		//Message print
+		
+		String message=page.locator("--------").textContent();
+		System.out.println(message);
+		
+		
+		//Dropdown Handlng code
+		//Select By Value
+		
+		page.locator("#country").selectOption("india");
+		
+		//SelectByVisibleText
+		
+		 page.locator("#manager_id").selectOption("Head Salesman (129/S/001)");
+		
+		//By Index
+		
+		page.locator("#country").selectOption(new SelectOption().setIndex(1));
+		
+		//Drop Down search
+		
+		page.locator(".ant-select-selector").click();
 
+		page.locator(".ant-select-selection-search-input").fill("Kerala");
+
+		page.getByText("Kerala").click();
 		
+		// Wait for popup
+
+        page.waitForSelector("#name");
+
+        //Scrolldown
+        //Scroll to bottom of page
+        
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)");
+        
+        //Scroll by specific pixels
+        
+        page.mouse().wheel(0, 500);
+        page.evaluate("window.scrollBy(0,500)");
+        
+        //Scroll element into view
+        
+        Locator element = page.locator("//button[text()='Submit']");
+        element.scrollIntoViewIfNeeded();
+        element.click();
+        
+        //Slow Scrolling
+        
+        for(int i=0; i<5; i++) {
+            page.mouse().wheel(0, 400);
+            page.waitForTimeout(1000);
+        }
+		
+        
+        
+        
 		
 	}
 
