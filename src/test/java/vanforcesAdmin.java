@@ -85,8 +85,37 @@ public class vanforcesAdmin {
     	//Route Adding
     	
     	page.locator("xapth=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[1]/div[2]/div/div[2]/button[2]").click();
+    	page.locator("#nameRoute").fill("Route 3");
+    	page.locator("#code").fill("R03");
+    	page.locator("#manager_id").selectOption("Head Salesman (129/S/001)");
+    	page.locator("#def_salesman").selectOption("Head Salesman - 129/S/001");
+    	page.locator("#branch_id").selectOption("B01 - Main Branch 1");
+    	page.mouse().wheel(0, 500);
+        page.evaluate("window.scrollBy(0,500)");
+        page.locator("//*[@id=\"root\"]/div/div/main/div/div/form/div/div[2]/div[1]/div/div[2]/button/span/svg/path").click();
+        page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/form/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div/div/span/div").selectOption(new SelectOption[] {
+            new SelectOption().setLabel("Sunday"),
+            new SelectOption().setLabel("Monday"),
+            new SelectOption().setLabel("Tuesday"),
+            new SelectOption().setLabel("Wednesday"),
+            new SelectOption().setLabel("Thursday"),
+            new SelectOption().setLabel("Friday"),
+            new SelectOption().setLabel("Saturday") 
+        });
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/form/div/div[3]/div[1]/div/div[2]/button").click();
+    	page.getByLabel("#routeform_multi_sod").check();
+    	page.getByLabel("#routeform_allow_online_transactions");
+    	page.getByLabel("#routeform_no_visit_reason_mandatory").check();
+    	page.getByLabel("#routeform_no_transaction_reason_mandatory");
+    	page.getByLabel("#routeform_enable_sales_draft").check();
+    	page.getByLabel("#routeform_enable_casual_customer");
+    	page.getByLabel("#routeform_checklist_enabled").check();
+    	page.getByLabel("#routeform_enable_van_inventory_adjustment");
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/form/button").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]").click();
     	
     	
+    	//Product Multipack Adding
     	
     	
     	

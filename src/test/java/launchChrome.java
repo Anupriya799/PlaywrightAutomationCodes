@@ -126,6 +126,13 @@ public class launchChrome {
             page.mouse().wheel(0, 400);
             page.waitForTimeout(1000);
         }
+        
+        
+        //Radila button handling
+        
+        page.locator("#male").check();
+        
+        page.getByLabel("Male").check();
 		
         
         
