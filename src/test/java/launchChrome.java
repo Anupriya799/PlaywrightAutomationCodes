@@ -140,8 +140,15 @@ public class launchChrome {
         
         page.locator("#remember").uncheck();
 		
+        //Field clearing
         
+        page.locator("#email").clear();
+        page.locator("#email").fill("");
         
+        Locator field = page.locator("#email");
+
+        field.clear();              // Clear existing value
+        field.fill("newvalue@gmail.com");   // Enter new value
         
 		
 	}

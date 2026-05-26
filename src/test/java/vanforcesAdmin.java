@@ -3,6 +3,7 @@ import java.util.regex.Pattern;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.SelectOption;
@@ -155,8 +156,93 @@ public class vanforcesAdmin {
     	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div/form/div[2]/button[2]").click();
     	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]").click();
     	
+    	//Product Price Adding
     	
-    			
+    	page.locator("xpath//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[1]/div[2]/div/div[2]/button[2]").click();
+    	page.locator("#code").fill("PP04");
+    	page.locator("#product_id").selectOption("105 - TRAY");
+    	page.locator("#cost_price").fill("150");
+    	page.locator("#sales").fill("250");
+    	page.locator("#min_gr").fill("250");
+    	page.locator("#min_damage").fill("250");
+    	page.locator("#min_sales").fill("200");
+    	page.locator("min_expiry").fill("250");
+    	page.locator("#min_foc").fill("0");
+    	Locator field=page.locator("#max_discount");
+    	field.clear();
+    	field.fill("15%");
+    	page.locator("#gr").fill("250");
+    	page.locator("#expiry").fill("250");
+    	page.locator("#damage").fill("250");
+    	page.locator("#foc").fill("250");
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[3]/div[2]/div/div[1]/div/div[3]/div/button[2]").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button/span").click();
     	
+    	//Customer Adding
+    	
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[1]/div[2]/div/div[2]/button[2]").click();
+    	page.locator("#name").fill("Customer 1");
+    	page.locator("#code").fill("CU03");
+    	page.locator("#customer_type_id").selectOption("Retailer");
+    	page.mouse().wheel(0, 500);
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/form/div/div[2]/div[1]/div/div[2]/button").click();
+    	page.locator("#region_id").selectOption("R01 - Main Region");
+    	page.locator("#area_id").selectOption("A01-Main Area 1 (MA001)");
+    	page.locator("#route").selectOption("R001 - Route 1");
+    	page.mouse().wheel(0, 500);
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/form/div/div[3]/div[1]/div/div[2]/button/span/svg").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/form/div/div[3]/div[2]/div[1]/div[1]/div/div/div[2]/div/div/div/div/span/div").selectOption("Cash");
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/form/div/div[3]/div[2]/div[1]/div[2]/div/div/div[2]/div/div/div/div/span/span[2]").selectOption("Cash");
+    	page.locator("#credit_limit_amt").fill("10000");
+    	page.locator("#credit_limit_days").fill("30");
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/form/button").click();
+    	
+    	//Custom Document Code
+    	
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]").click();
+    	
+    	//Company Details
+    	
+    	page.mouse().wheel(0, 500);
+    	page.locator("xpath=//*[@id=\"basic\"]/div/div[20]/div/div/div/div/button").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]").click();
+    	
+    	//Users Adding
+    	
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[1]/div[2]/div/div[2]/button").click();
+    	page.locator("#name").fill("Head Salesman 3");
+    	page.locator("#ref_code").fill("hs/678");
+    	page.locator("#contact").fill("1234567890");
+    	page.locator("#email").fill("100@gmail.com");
+    	page.locator("password").fill("123456");
+    	page.locator("#confirm_password").fill("123456");
+    	page.locator("#user_type").selectOption("SALESMAN");
+    	page.locator("xpath=//*[@id=\"collector\"]/span").check();
+    	page.locator("xpath=//*[@id=\"allow_mobile_transactions\"]/span").check();
+    	page.locator("xpath=//*[@id=\"enable_targets\"]/span").check();
+    	page.mouse().wheel(0, 500);
+    	page.locator("xpath=//*[@id=\"vf-users-form\"]/div[1]/div[5]/div[1]/div/div[2]/div/span/svg/path").click();
+    	page.locator("#credit_given").fill("10000");
+    	page.locator("#temp_credit_amt").fill("5000");
+    	page.locator("#salary_ctc").fill("10000");
+    	page.locator("#temp_credit_days").fill("5");
+    	page.locator("#max_discount_perc").fill("50");
+    	page.locator("#max_document_discount").fill("25");
+    	page.mouse().wheel(0, 500);
+    	page.locator("xpath=//*[@id=\"allow_customer_location_update\"]/span").check();
+    	page.locator("xpath=//*[@id=\"discount_in_collection\"]/span").check();
+    	page.locator("xpath=//*[@id=\"discount_in_amount\"]/span").check();
+    	page.locator("xpath=//*[@id=\"enable_line_item_discount\"]/span").check();
+    	page.mouse().wheel(0, 500);
+    	page.locator("xpath=//*[@id=\"vf-users-form\"]/div[2]/button/span[2]").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]");
+    	
+    	//Print preview Settings
+    	
+    	page.mouse().wheel(0, 500);
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div/div/div/form/div/div[1]/div/div[2]/div[6]/div/div/button/span").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]/span").click();
+    	
+    		
     }
 }
