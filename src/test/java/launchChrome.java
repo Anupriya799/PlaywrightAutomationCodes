@@ -133,6 +133,12 @@ public class launchChrome {
         page.locator("#male").check();
         
         page.getByLabel("Male").check();
+        
+        //Check box enabling 
+        
+        page.locator("#remember").check();
+        
+        page.locator("#remember").uncheck();
 		
         
         

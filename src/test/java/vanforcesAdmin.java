@@ -117,7 +117,46 @@ public class vanforcesAdmin {
     	
     	//Product Multipack Adding
     	
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[1]/div[2]/div/div[2]/button[2]").click();
+    	page.locator("#name").fill("PIECES");
+    	page.locator("#code").fill("PCS");
+    	page.locator("#base_unit").check();
+    	page.locator("xpath=/html/body/div[5]/div/div[3]/div/div[3]/div/button[2]").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]").click();
     	
+    	//Product Category Adding
+    	
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[1]/div[2]/div/div[2]/button[2]").click();
+    	page.locator("#name").fill("Main Product Category 2");
+    	page.locator("#code").fill("PC03");
+    	page.locator("tax_category").selectOption("E - Exempt Supply");
+    	page.locator("xpath=E - Exempt Supply").click();
+    	
+    	//Product Subcategory Adding
+    	
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[1]/div[2]/div/div[2]/button[2]").click();
+    	page.locator("#name").fill("Sub Product Category 3");
+    	page.locator("#code").fill("PS03");
+    	page.locator("#category_id").selectOption("001 - Main Product Category 1");
+    	page.locator("xpath=/html/body/div[2]/div/div[3]/div/div[3]/div/button[2]").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]").click();
+    	
+    	//Product Adding
+    	
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[2]/div[1]/div[2]/div/div[2]/button[2]").click();
+    	page.locator("#name").fill("Sample Product 1");
+    	page.locator("#code").fill("SP03");
+    	page.locator("#category_id").selectOption("001 - Main Product Category 1");
+    	page.locator("#tax_category").selectOption("E - Exempt Supply");
+    	page.locator("#subcategory_id").selectOption("SC01 - Sample Subcategory");
+    	page.locator("#type_id").selectOption("goods");
+    	page.locator("#base_multipack_id").selectOption("PCS - PIECES");
+    	page.mouse().wheel(0, 500);
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div/form/div[2]/button[2]").click();
+    	page.locator("xpath=//*[@id=\"root\"]/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/button[3]").click();
+    	
+    	
+    			
     	
     }
 }
